@@ -1,0 +1,144 @@
+{
+  "schemaVersion" : 1,
+  "id" : "demo-electric-motor",
+  "name" : "Интерактивная презентация электродвигателя",
+  "backgroundColor" : "#25313D",
+  "hdrFilePath" : null,
+  "hdrRotation" : 0.0,
+  "hdrIntensity" : 1.0,
+  "models" : [ {
+    "id" : "motor-glb",
+    "name" : "Электродвигатель",
+    "filePath" : "models/electric_motor.glb",
+    "rootObjectId" : "motor"
+  } ],
+  "objects" : [ {
+    "id" : "motor",
+    "parentId" : null,
+    "name" : "Электродвигатель",
+    "objectType" : "GROUP",
+    "sourceNodeKey" : "ElectricMotor",
+    "transform" : {
+      "location" : {
+        "x" : 0.0,
+        "y" : 0.32,
+        "z" : 0.0
+      },
+      "rotation" : {
+        "x" : 0.0,
+        "y" : 0.0,
+        "z" : 0.0,
+        "w" : 1.0
+      },
+      "scale" : {
+        "x" : 1.2,
+        "y" : 1.2,
+        "z" : 1.2
+      }
+    },
+    "descriptionMarkdown" : "# Электродвигатель\n\nНажмите на компонент, чтобы увидеть описание. Клавиша **E** запускает событие.",
+    "imagePaths" : [ "images/motor.png" ],
+    "rotationEnabled" : true,
+    "syntheticRoot" : false
+  }, {
+    "id" : "stator",
+    "parentId" : "motor",
+    "name" : "Корпус статора",
+    "objectType" : "MESH",
+    "sourceNodeKey" : "StatorHousing",
+    "transform" : {
+      "location" : {
+        "x" : 0.0,
+        "y" : 0.0,
+        "z" : 0.0
+      },
+      "rotation" : {
+        "x" : 0.0,
+        "y" : 0.0,
+        "z" : 0.0,
+        "w" : 1.0
+      },
+      "scale" : {
+        "x" : 1.0,
+        "y" : 1.0,
+        "z" : 1.0
+      }
+    },
+    "descriptionMarkdown" : "## Корпус статора\n\nНесущая деталь. Внутри размещаются статор и обмотки; ребра улучшают теплоотвод.",
+    "imagePaths" : [ ],
+    "rotationEnabled" : true,
+    "syntheticRoot" : false
+  }, {
+    "id" : "shaft",
+    "parentId" : "motor",
+    "name" : "Передний щит и вал",
+    "objectType" : "MESH",
+    "sourceNodeKey" : "FrontShieldAndShaft",
+    "transform" : {
+      "location" : {
+        "x" : 0.0,
+        "y" : 0.0,
+        "z" : 0.0
+      },
+      "rotation" : {
+        "x" : 0.0,
+        "y" : 0.0,
+        "z" : 0.0,
+        "w" : 1.0
+      },
+      "scale" : {
+        "x" : 1.0,
+        "y" : 1.0,
+        "z" : 1.0
+      }
+    },
+    "descriptionMarkdown" : "## Передний щит и вал\n\nЩит фиксирует подшипниковый узел. Вал передает вращающий момент внешнему механизму.",
+    "imagePaths" : [ ],
+    "rotationEnabled" : true,
+    "syntheticRoot" : false
+  }, {
+    "id" : "fan",
+    "parentId" : "motor",
+    "name" : "Задняя крышка вентилятора",
+    "objectType" : "MESH",
+    "sourceNodeKey" : "RearFanCover",
+    "transform" : {
+      "location" : {
+        "x" : 0.0,
+        "y" : 0.0,
+        "z" : 0.0
+      },
+      "rotation" : {
+        "x" : 0.0,
+        "y" : 0.0,
+        "z" : 0.0,
+        "w" : 1.0
+      },
+      "scale" : {
+        "x" : 1.0,
+        "y" : 1.0,
+        "z" : 1.0
+      }
+    },
+    "descriptionMarkdown" : "## Задняя крышка вентилятора\n\nЗащищает вентилятор и направляет поток охлаждающего воздуха вдоль корпуса.",
+    "imagePaths" : [ ],
+    "rotationEnabled" : true,
+    "syntheticRoot" : false
+  } ],
+  "events" : [ {
+    "id" : "inspection",
+    "ownerObjectId" : "motor",
+    "name" : "Демонстрация работы и разборки",
+    "animations" : [ {
+      "targetObjectId" : "shaft",
+      "channel" : "ROTATE_X",
+      "amplitude" : 12.566371,
+      "durationSec" : 2.0
+    }, {
+      "targetObjectId" : "fan",
+      "channel" : "TRANSLATE_Y",
+      "amplitude" : 0.65,
+      "durationSec" : 2.8
+    } ]
+  } ]
+}

@@ -1,0 +1,16 @@
+# Результаты сборки Maven
+target/
+
+# Файлы IntelliJ IDEA
+.idea/
+*.iml
+out/
+
+# Логи и временные файлы
+*.log
+*.tmp
+*.bak
+
+# Локальные настройки
+.env
+*.local
